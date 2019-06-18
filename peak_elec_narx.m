@@ -7,10 +7,10 @@ T = training(6:end,1)';
 X = num2cell(X);
 T = num2cell(T);
 
-% net = narxnet(1:5,1:2,10);
-% [Xs, Xi, Ai, Ts] = preparets(net, X,{}, T);
-net = timedelaynet(1:5, 10);
-[Xs, Xi, Ai, Ts] = preparets(net, X, T);
+net = narxnet(1:5,1:2,10);
+[Xs, Xi, Ai, Ts] = preparets(net, X,{}, T);
+% net = timedelaynet(1:5, 10);
+% [Xs, Xi, Ai, Ts] = preparets(net, X, T);
 % view(net)
 
 net = train(net, Xs, Ts, Xi,{}, Ai);
